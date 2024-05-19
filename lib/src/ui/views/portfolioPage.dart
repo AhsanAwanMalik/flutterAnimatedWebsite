@@ -147,15 +147,16 @@ class PortfolioScreen extends StatelessWidget {
                                         children: [
                                           Container(
                                             height: 70,
-                                                     width: Responsive.isMobileContext(
-                                                          context)
-                                                      ? Get.width / 1.3
-                                                      : Get.width / 1.6,
+                                            width: Responsive.isMobileContext(
+                                                    context)
+                                                ? Get.width / 1.3
+                                                : Get.width / 1.6,
                                             color: const Color.fromARGB(
                                                 255, 213, 213, 213),
                                             child: Row(
                                               mainAxisAlignment:
-                                                  MainAxisAlignment.spaceBetween,
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
                                               children: [
                                                 Row(
                                                   children: [
@@ -180,14 +181,15 @@ class PortfolioScreen extends StatelessWidget {
                                                   // width: 20,
                                                   // color: Colors.red,
                                                   child: Icon(
-                                                    Icons.arrow_drop_down_rounded,
+                                                    Icons
+                                                        .arrow_drop_down_rounded,
                                                     size: 50,
                                                   ),
                                                 )
                                               ],
                                             ).paddingOnly(right: 10, left: 20),
                                           ),
-                                             Obx(() => _.social.value
+                                          Obx(() => _.social.value
                                               ? Container(
                                                   height: 500,
                                                   width: Get.width / 2,
@@ -199,96 +201,145 @@ class PortfolioScreen extends StatelessWidget {
                                                         (BuildContext context,
                                                             int index) {
                                                       return Container(
-                                        // height: 770,
-                                        decoration: BoxDecoration(
-                                            color: Color.fromARGB(
-                                                255, 255, 255, 255),
-                                            shape: BoxShape.rectangle,
-                                            boxShadow: [
-                                              BoxShadow(
-                                                color: Colors.grey
-                                                    .withOpacity(0.5),
-                                                spreadRadius: 2,
-                                                blurRadius: 14,
-                                                offset: Offset(8,
-                                                    8), // changes the position of the shadow
-                                              ),
-                                            ],
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(12))),
-                                        child: SafeArea(
-                                          minimum: EdgeInsets.only(
-                                              right: 23, left: 23),
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              SizedBox(
-                                                height: Get.height / 69,
-                                              ),
-                                              ClipRRect(
-                                                borderRadius:
-                                                    const BorderRadius.only(
-                                                  topLeft: Radius.circular(10),
-                                                  topRight: Radius.circular(10),
-                                                ),
-                                                child: Image.asset(
-                                                  "images/portfolioAssets/customer6.png",
-                                                  height: 100,
-                                                  width: 120,
-                                                  fit: BoxFit.fill,
-                                                ),
-                                              ),
-                                              SizedBox(
-                                                height: Get.height / 25,
-                                              ),
-                                              Text(
-                                                'Faisal Burgers',
-                                                style: TextStyle(
-                                                    fontSize: 20,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                              SizedBox(
-                                                height: Get.height / 69,
-                                              ),
-                                              Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Icon(
-                                                    Icons.facebook_outlined,
-                                                    size: Get.width / 50,
-                                                    color: Colors.blueAccent,
-                                                  ),
-                                                  SizedBox(
-                                                    width: Get.height / 30,
-                                                  ),
-                                                  Image.asset(
-                                                    "images/portfolioAssets/insta.png",
-                                                    width: Get.width / 35,
-                                                  ),
-                                                  SizedBox(
-                                                    width: Get.height / 30,
-                                                  ),
-                                                  SvgPicture.asset(
-                                                    "images/portfolioAssets/www.svg",
-                                                    width: Get.width / 52,
-                                                  ),
-                                                ],
-                                              ),
-                                              SizedBox(
-                                                height: Get.height / 69,
-                                              ),
-                                              // Text(
-                                              //     "Car Booth is one the leading. Headquartered in Lahore."),
-                                              SizedBox(
-                                                height: Get.height / 69,
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ).marginOnly(bottom: 15);
+                                                        // height: 770,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                                color: Color
+                                                                    .fromARGB(
+                                                                        255,
+                                                                        255,
+                                                                        255,
+                                                                        255),
+                                                                shape: BoxShape
+                                                                    .rectangle,
+                                                                boxShadow: [
+                                                                  BoxShadow(
+                                                                    color: Colors
+                                                                        .grey
+                                                                        .withOpacity(
+                                                                            0.5),
+                                                                    spreadRadius:
+                                                                        2,
+                                                                    blurRadius:
+                                                                        14,
+                                                                    offset: Offset(
+                                                                        8,
+                                                                        8), // changes the position of the shadow
+                                                                  ),
+                                                                ],
+                                                                borderRadius: BorderRadius
+                                                                    .all(Radius
+                                                                        .circular(
+                                                                            12))),
+                                                        child: SafeArea(
+                                                          minimum:
+                                                              EdgeInsets.only(
+                                                                  right: 23,
+                                                                  left: 23),
+                                                          child: Column(
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceEvenly,
+                                                            children: [
+                                                              SizedBox(
+                                                                height:
+                                                                    Get.height /
+                                                                        69,
+                                                              ),
+                                                              ClipRRect(
+                                                                borderRadius:
+                                                                    const BorderRadius
+                                                                        .only(
+                                                                  topLeft: Radius
+                                                                      .circular(
+                                                                          10),
+                                                                  topRight: Radius
+                                                                      .circular(
+                                                                          10),
+                                                                ),
+                                                                child:
+                                                                    Image.asset(
+                                                                  "images/portfolioAssets/customer6.png",
+                                                                  height: 100,
+                                                                  width: 120,
+                                                                  fit: BoxFit
+                                                                      .fill,
+                                                                ),
+                                                              ),
+                                                              SizedBox(
+                                                                height:
+                                                                    Get.height /
+                                                                        25,
+                                                              ),
+                                                              Text(
+                                                                'Faisal Burgers',
+                                                                style: TextStyle(
+                                                                    fontSize:
+                                                                        20,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold),
+                                                              ),
+                                                              SizedBox(
+                                                                height:
+                                                                    Get.height /
+                                                                        69,
+                                                              ),
+                                                              Row(
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .center,
+                                                                children: [
+                                                                  Icon(
+                                                                    Icons
+                                                                        .facebook_outlined,
+                                                                    size:
+                                                                        Get.width /
+                                                                            50,
+                                                                    color: Colors
+                                                                        .blueAccent,
+                                                                  ),
+                                                                  SizedBox(
+                                                                    width:
+                                                                        Get.height /
+                                                                            30,
+                                                                  ),
+                                                                  Image.asset(
+                                                                    "images/portfolioAssets/insta.png",
+                                                                    width:
+                                                                        Get.width /
+                                                                            35,
+                                                                  ),
+                                                                  SizedBox(
+                                                                    width:
+                                                                        Get.height /
+                                                                            30,
+                                                                  ),
+                                                                  SvgPicture
+                                                                      .asset(
+                                                                    "images/portfolioAssets/www.svg",
+                                                                    width:
+                                                                        Get.width /
+                                                                            52,
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                              SizedBox(
+                                                                height:
+                                                                    Get.height /
+                                                                        69,
+                                                              ),
+                                                              // Text(
+                                                              //     "Car Booth is one the leading. Headquartered in Lahore."),
+                                                              SizedBox(
+                                                                height:
+                                                                    Get.height /
+                                                                        69,
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ).marginOnly(bottom: 15);
                                                     },
                                                   ),
                                                 )
@@ -304,10 +355,9 @@ class PortfolioScreen extends StatelessWidget {
                                   children: [
                                     Container(
                                       height: 70,
-                                           width: Responsive.isMobileContext(
-                                                    context)
-                                                ? Get.width / 1.3
-                                                : Get.width / 1.6,
+                                      width: Responsive.isMobileContext(context)
+                                          ? Get.width / 1.3
+                                          : Get.width / 1.6,
                                       color: const Color.fromARGB(
                                           255, 213, 213, 213),
                                       child: Row(
@@ -366,7 +416,7 @@ class PortfolioScreen extends StatelessWidget {
                                           "Website",
                                           style: TextStyle(
                                               // color: UIDataColors.whiteColor,
-                                              fontSize: Get.width*0.015),
+                                              fontSize: Get.width * 0.015),
                                         ),
                                       ],
                                     ),
@@ -384,7 +434,7 @@ class PortfolioScreen extends StatelessWidget {
                                           "Social Media Marketing",
                                           style: TextStyle(
                                               // color: UIDataColors.secondaryOrangeColor,
-                                              fontSize: Get.width*0.015),
+                                              fontSize: Get.width * 0.015),
                                         ),
                                       ],
                                     ),
@@ -401,7 +451,7 @@ class PortfolioScreen extends StatelessWidget {
                                           "Product Photography",
                                           style: TextStyle(
                                             // color: UIDataColors.whiteColor,
-                                            fontSize: Get.width*0.015,
+                                            fontSize: Get.width * 0.015,
                                           ),
                                         ),
                                       ],
@@ -564,7 +614,6 @@ class PortfolioScreen extends StatelessWidget {
                                 ],
                               ),
                             ),
-                      
                       SizedBox(height: Get.height * 0.02),
                       CarouselSlider(
                         options: CarouselOptions(
