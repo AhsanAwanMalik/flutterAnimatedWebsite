@@ -614,35 +614,35 @@ class PortfolioScreen extends StatelessWidget {
                                           crossAxisSpacing: 4,
                                           children: [
                                             Image.asset(
-                                                "/Users/mannan/Desktop/Quick-Marketing/assets/images/portfolioAssets/product_photography/black-leather-wallet-on-grey-concrete-background-2023-11-27-04-50-55-utc.jpg"),
+                                                "images/portfolioAssets/product_photography/black-leather-wallet-on-grey-concrete-background-2023-11-27-04-50-55-utc.jpg"),
                                             Image.asset(
-                                                "/Users/mannan/Desktop/Quick-Marketing/assets/images/portfolioAssets/product_photography/cbd-oil-dropper-arrangement.jpg"),
+                                                "images/portfolioAssets/product_photography/cbd-oil-dropper-arrangement.jpg"),
                                             Image.asset(
-                                                "/Users/mannan/Desktop/Quick-Marketing/assets/images/portfolioAssets/product_photography/cbd-oil-dropper-composition.jpg"),
+                                                "images/portfolioAssets/product_photography/cbd-oil-dropper-composition.jpg"),
                                             Image.asset(
-                                                "/Users/mannan/Desktop/Quick-Marketing/assets/images/portfolioAssets/product_photography/closeup-shot-of-a-men-s-elegant-wristwatch-and-bra-2023-11-27-05-28-49-utc.jpg"),
+                                                "images/portfolioAssets/product_photography/closeup-shot-of-a-men-s-elegant-wristwatch-and-bra-2023-11-27-05-28-49-utc.jpg"),
                                             Image.asset(
-                                                "/Users/mannan/Desktop/Quick-Marketing/assets/images/portfolioAssets/product_photography/closeup-shot-of-a-men-s-elegant-wristwatch-and-bra-2023-11-27-05-33-56-utc.jpg"),
+                                                "images/portfolioAssets/product_photography/closeup-shot-of-a-men-s-elegant-wristwatch-and-bra-2023-11-27-05-33-56-utc.jpg"),
 
                                             Image.asset(
-                                                "/Users/mannan/Desktop/Quick-Marketing/assets/images/portfolioAssets/product_photography/COmatic-01.png"),
+                                                "images/portfolioAssets/product_photography/COmatic-01.png"),
                                             Image.asset(
-                                                "/Users/mannan/Desktop/Quick-Marketing/assets/images/portfolioAssets/product_photography/dsc-1506-2023-11-27-05-31-11-utc.jpg"),
+                                                "images/portfolioAssets/product_photography/dsc-1506-2023-11-27-05-31-11-utc.jpg"),
                                             Image.asset(
-                                                "/Users/mannan/Desktop/Quick-Marketing/assets/images/portfolioAssets/product_photography/dsc-1511-2023-11-27-04-52-59-utc.jpg"),
+                                                "images/portfolioAssets/product_photography/dsc-1511-2023-11-27-04-52-59-utc.jpg"),
                                             Image.asset(
-                                                "/Users/mannan/Desktop/Quick-Marketing/assets/images/portfolioAssets/product_photography/new-brown-leather-wallet-on-dark-background-2023-11-27-05-31-59-utc.jpg"),
+                                                "images/portfolioAssets/product_photography/new-brown-leather-wallet-on-dark-background-2023-11-27-05-31-59-utc.jpg"),
                                             //
                                             Image.asset(
-                                                "/Users/mannan/Desktop/Quick-Marketing/assets/images/portfolioAssets/product_photography/organic-cbd-oil-dropper-assortment.jpg"),
+                                                "images/portfolioAssets/product_photography/organic-cbd-oil-dropper-assortment.jpg"),
                                             Image.asset(
-                                                "/Users/mannan/Desktop/Quick-Marketing/assets/images/portfolioAssets/product_photography/small-purse-studio-still-life1.jpg"),
+                                                "images/portfolioAssets/product_photography/small-purse-studio-still-life1.jpg"),
                                             Image.asset(
-                                                "/Users/mannan/Desktop/Quick-Marketing/assets/images/portfolioAssets/product_photography/small-purse-studio-still-life2.jpg"),
+                                                "images/portfolioAssets/product_photography/small-purse-studio-still-life2.jpg"),
                                             Image.asset(
-                                                "/Users/mannan/Desktop/Quick-Marketing/assets/images/portfolioAssets/product_photography/small-purse-studio-still-life3.jpg"),
+                                                "images/portfolioAssets/product_photography/small-purse-studio-still-life3.jpg"),
                                             Image.asset(
-                                                "/Users/mannan/Desktop/Quick-Marketing/assets/images/portfolioAssets/product_photography/small-purse-studio-still-life.jpg"),
+                                                "images/portfolioAssets/product_photography/small-purse-studio-still-life.jpg"),
                                           ])
                                     ],
                                   ),

@@ -1,11 +1,14 @@
 import 'package:animated_text_lerp/animated_text_lerp.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:quickmarket/src/ui/widgets/footerWidget.dart';
 import 'package:quickmarket/src/ui/widgets/hoverWidget.dart';
 import 'package:quickmarket/src/utils/config/responsive.dart';
+import 'package:video_player/video_player.dart';
 
 import '../../controllers/home.dart';
 import '../../utils/config/commonscafold.dart';
@@ -15,6 +18,27 @@ import '../widgets/tab/ReusableTabWithFilterList.dart';
 
 class HomeScreen extends StatelessWidget {
   final HomeController _ = Get.find<HomeController>();
+    final images = [
+      "assets/images/customer1.png",
+      "assets/images/customer2.png",
+      "assets/images/customer3.png",
+      "assets/images/customer4.png",
+      "assets/images/customer5.png",
+      "assets/images/customer6.png",
+      "assets/images/customer7.png",
+      "assets/images/customer8.png",
+    ];
+
+    final names = [
+      "Bar.B.Q",
+      "Daisy Developers",
+      "Dayim Marketing",
+      "Ussion Host",
+      "Safari",
+      "Global Fotos",
+      "The Realtors",
+      "Khan"
+    ];
   @override
   Widget build(BuildContext context) {
     return CommonScafold(
@@ -1172,12 +1196,17 @@ class HomeScreen extends StatelessWidget {
                       // color: Colors.amber,
                       child: Column(
                         children: [
-                          Text('Our Portfolio',
-                              style: TextStyle(
-                                fontSize: 35,
-                                fontFamily: 'Popins',
-                                fontWeight: FontWeight.bold,
-                              )).paddingSymmetric(vertical: 40),
+                          SizedBox(height: Get.height / 20),
+                          Text(
+                            "Our portfolio silhouettes our triumph in our niche. Take a look at our gratified clients for motivation or a round of applause.",
+                            style: TextStyle(
+                                fontSize: 26,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: "poppins"),
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(height: Get.height * 0.02),
                           !Responsive.isDesktopContext(context)
                               ? Column(
                                   children: [
@@ -1192,7 +1221,7 @@ class HomeScreen extends StatelessWidget {
                                           child: Column(
                                             children: [
                                               Container(
-                                                height: 70,
+                                                height: 70.sh,
                                                 width:
                                                     Responsive.isMobileContext(
                                                             context)
@@ -1253,11 +1282,8 @@ class HomeScreen extends StatelessWidget {
                                                                     context,
                                                                 int index) {
                                                           return Container(
-                                                            // height: Get.height / 9,
-                                                            child: Image.asset(
-                                                              "images/portfolioAssets/tab-1-1.png",
-                                                              fit: BoxFit.cover,
-                                                            ),
+                                                            child: VideoPlayer(_
+                                                                .videoController),
                                                           ).marginOnly(
                                                               bottom: 15);
                                                         },
@@ -1335,7 +1361,8 @@ class HomeScreen extends StatelessWidget {
                                                       width: Get.width / 2,
                                                       child: ListView.builder(
                                                         // padding: EdgeInsets.all(35),
-                                                        itemCount: 8,
+                                                        itemCount:
+                                                            images.length,
 
                                                         itemBuilder:
                                                             (BuildContext
@@ -1373,8 +1400,10 @@ class HomeScreen extends StatelessWidget {
                                                             child: SafeArea(
                                                               minimum: EdgeInsets
                                                                   .only(
-                                                                      right: 23,
-                                                                      left: 23),
+                                                                      right:
+                                                                          23.r,
+                                                                      left:
+                                                                          23.r),
                                                               child: Column(
                                                                 mainAxisAlignment:
                                                                     MainAxisAlignment
@@ -1398,11 +1427,12 @@ class HomeScreen extends StatelessWidget {
                                                                     ),
                                                                     child: Image
                                                                         .asset(
-                                                                      "images/portfolioAssets/customer6.png",
+                                                                      images[
+                                                                          index],
                                                                       height:
-                                                                          100,
-                                                                      width:
-                                                                          120,
+                                                                          100.sh,
+                                                                      width: 120
+                                                                          .sh,
                                                                       fit: BoxFit
                                                                           .fill,
                                                                     ),
@@ -1413,7 +1443,7 @@ class HomeScreen extends StatelessWidget {
                                                                             25,
                                                                   ),
                                                                   Text(
-                                                                    'Faisal Burgers',
+                                                                    'Faisal Burgerssss',
                                                                     style: TextStyle(
                                                                         fontSize:
                                                                             20,
@@ -1611,10 +1641,13 @@ class HomeScreen extends StatelessWidget {
                                         itemBuilder:
                                             (BuildContext context, int index) {
                                           return Container(
-                                            // height: Get.height / 9,
-                                            child: Image.asset(
-                                              "images/portfolioAssets/tab-1-1.png",
-                                              fit: BoxFit.fitWidth,
+                                            height: 300,
+                                            width: 300,
+                                            child: AspectRatio(
+                                              aspectRatio: _.videoController
+                                                  .value.aspectRatio,
+                                              child: VideoPlayer(
+                                                  _.videoController),
                                             ),
                                           );
                                         },
@@ -1624,7 +1657,7 @@ class HomeScreen extends StatelessWidget {
 
                                       GridView.builder(
                                         padding: EdgeInsets.all(35),
-                                        itemCount: 8,
+                                        itemCount: images.length,
                                         gridDelegate:
                                             SliverGridDelegateWithFixedCrossAxisCount(
                                                 crossAxisCount: 3,
@@ -1670,7 +1703,7 @@ class HomeScreen extends StatelessWidget {
                                                           Radius.circular(10),
                                                     ),
                                                     child: Image.asset(
-                                                      "images/portfolioAssets/customer6.png",
+                                                      images[index],
                                                       height: 100,
                                                       width: 120,
                                                       fit: BoxFit.fill,
@@ -1680,7 +1713,7 @@ class HomeScreen extends StatelessWidget {
                                                     height: Get.height / 25,
                                                   ),
                                                   Text(
-                                                    'Faisal Burgers',
+                                                    names[index],
                                                     style: TextStyle(
                                                         fontSize: 20,
                                                         fontWeight:
@@ -1739,28 +1772,181 @@ class HomeScreen extends StatelessWidget {
                                             SizedBox(
                                               height: Get.height / 40,
                                             ),
-                                            Container(
-                                              height: Get.height / 4.2,
-                                              width: Get.width / 1.11,
-                                              decoration: ShapeDecoration(
-                                                color: Colors.redAccent,
+                                            //                      StaggeredGridView.countBuilder(
+                                            //   crossAxisCount: 4,
+                                            //   itemCount: images.length,
+                                            //   itemBuilder: (BuildContext context, int index) => Card(
+                                            //     child: Column(
+                                            //       children: <Widget>[
+                                            //         Image.network(images[index]),
+                                            //         Text("Some text"),
+                                            //       ],
+                                            //     ),
+                                            //   ),
+                                            //   staggeredTileBuilder: (int index) =>
+                                            //   new StaggeredTile.fit(2),
+                                            //   mainAxisSpacing: 4.0,
+                                            //   crossAxisSpacing: 4.0,
+                                            // ),
+                                            StaggeredGrid.count(
+                                                crossAxisCount: 4,
+                                                mainAxisSpacing: 5,
+                                                crossAxisSpacing: 4,
+                                                children: [
+                                                  Image.asset(
+                                                      "images/portfolioAssets/product_photography/black-leather-wallet-on-grey-concrete-background-2023-11-27-04-50-55-utc.jpg"),
+                                                  Image.asset(
+                                                      "images/portfolioAssets/product_photography/cbd-oil-dropper-arrangement.jpg"),
+                                                  Image.asset(
+                                                      "images/portfolioAssets/product_photography/cbd-oil-dropper-composition.jpg"),
+                                                  Image.asset(
+                                                      "images/portfolioAssets/product_photography/closeup-shot-of-a-men-s-elegant-wristwatch-and-bra-2023-11-27-05-28-49-utc.jpg"),
+                                                  Image.asset(
+                                                      "images/portfolioAssets/product_photography/closeup-shot-of-a-men-s-elegant-wristwatch-and-bra-2023-11-27-05-33-56-utc.jpg"),
 
-                                                shape: RoundedRectangleBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          10.0),
-                                                ),
-                                                // color: Colors.blue,
-                                              ),
-                                            ),
+                                                  Image.asset(
+                                                      "images/portfolioAssets/product_photography/COmatic-01.png"),
+                                                  Image.asset(
+                                                      "images/portfolioAssets/product_photography/dsc-1506-2023-11-27-05-31-11-utc.jpg"),
+                                                  Image.asset(
+                                                      "images/portfolioAssets/product_photography/dsc-1511-2023-11-27-04-52-59-utc.jpg"),
+                                                  Image.asset(
+                                                      "images/portfolioAssets/product_photography/new-brown-leather-wallet-on-dark-background-2023-11-27-05-31-59-utc.jpg"),
+                                                  //
+                                                  Image.asset(
+                                                      "images/portfolioAssets/product_photography/organic-cbd-oil-dropper-assortment.jpg"),
+                                                  Image.asset(
+                                                      "images/portfolioAssets/product_photography/small-purse-studio-still-life1.jpg"),
+                                                  Image.asset(
+                                                      "images/portfolioAssets/product_photography/small-purse-studio-still-life2.jpg"),
+                                                  Image.asset(
+                                                      "images/portfolioAssets/product_photography/small-purse-studio-still-life3.jpg"),
+                                                  Image.asset(
+                                                      "images/portfolioAssets/product_photography/small-purse-studio-still-life.jpg"),
+                                                ])
                                           ],
                                         ),
                                       ),
                                     ],
                                   ),
-                                ).marginSymmetric(horizontal: Get.width * .1),
+                                ),
+                          SizedBox(height: Get.height * 0.02),
+                          CarouselSlider(
+                            options: CarouselOptions(
+                              height: Get.height / 4.5,
+                              // enlargeCenterPage: true,
+                              autoPlay: true,
+                              autoPlayInterval: Duration(seconds: 2),
+                              autoPlayAnimationDuration:
+                                  Duration(milliseconds: 1200),
+                              autoPlayCurve: Curves.fastOutSlowIn,
+                              pauseAutoPlayOnTouch: true,
+                              // aspectRatio: 3,
+                              viewportFraction: 0.1,
+                            ),
+                            items: [
+                              Container(
+                                width: Get.width / 5,
+                                height: Get.height / 4,
+                                alignment: Alignment.centerLeft,
+                                decoration: BoxDecoration(
+                                  // borderRadius: BorderRadius.circular(8.0),
+                                  image: DecorationImage(
+                                    // alignment: Alignment.centerRight,
+                                    image: AssetImage(
+                                      "images/portfolioAssets/customer1.png",
+                                    ),
+                                    fit: BoxFit.fitWidth,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: Get.height * 0.02),
+                              Container(
+                                width: Get.width,
+                                height: Get.height / 1.2,
+                                alignment: Alignment.centerLeft,
+                                decoration: BoxDecoration(
+                                  // borderRadius: BorderRadius.circular(8.0),
+                                  image: DecorationImage(
+                                    // alignment: Alignment.centerRight,
+                                    image: AssetImage(
+                                      "images/portfolioAssets/customer2.png",
+                                    ),
+                                    fit: BoxFit.fitWidth,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: Get.height * 0.02),
+                              Container(
+                                width: Get.width,
+                                height: Get.height / 1,
+                                alignment: Alignment.centerLeft,
+                                decoration: BoxDecoration(
+                                  // borderRadius: BorderRadius.circular(8.0),
+                                  image: DecorationImage(
+                                    // alignment: Alignment.centerRight,
+                                    image: AssetImage(
+                                      "images/portfolioAssets/customer3.png",
+                                    ),
+                                    fit: BoxFit.fitWidth,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: Get.height * 0.02),
+                              Container(
+                                width: Get.width,
+                                height: Get.height / 1,
+                                alignment: Alignment.centerLeft,
+                                decoration: BoxDecoration(
+                                  // borderRadius: BorderRadius.circular(8.0),
+                                  image: DecorationImage(
+                                    // alignment: Alignment.centerRight,
+                                    image: AssetImage(
+                                      "images/portfolioAssets/customer4.png",
+                                    ),
+                                    fit: BoxFit.fitWidth,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: Get.height * 0.02),
+                              Container(
+                                width: Get.width,
+                                height: Get.height / 1,
+                                alignment: Alignment.centerLeft,
+                                decoration: BoxDecoration(
+                                  // borderRadius: BorderRadius.circular(8.0),
+                                  image: DecorationImage(
+                                    // alignment: Alignment.centerRight,
+                                    image: AssetImage(
+                                      "images/portfolioAssets/customer5.png",
+                                    ),
+                                    fit: BoxFit.fitWidth,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: Get.height * 0.02),
+                              Container(
+                                width: Get.width,
+                                height: Get.height / 1,
+                                alignment: Alignment.centerLeft,
+                                decoration: BoxDecoration(
+                                  // borderRadius: BorderRadius.circular(8.0),
+                                  image: DecorationImage(
+                                    // alignment: Alignment.centerRight,
+                                    image: AssetImage(
+                                      "images/portfolioAssets/customer6.png",
+                                    ),
+                                    fit: BoxFit.fitWidth,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: Get.height * 0.02),
+                            ],
+                          ),
                         ],
-                      ).paddingOnly(bottom: 30),
+                      ).marginSymmetric(
+                          horizontal:
+                              Responsive.isDesktopContext(context) ? 150 : 50),
                     ),
 
                     // numbering
