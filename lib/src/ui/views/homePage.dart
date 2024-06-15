@@ -18,27 +18,27 @@ import '../widgets/tab/ReusableTabWithFilterList.dart';
 
 class HomeScreen extends StatelessWidget {
   final HomeController _ = Get.find<HomeController>();
-    final images = [
-      "assets/images/customer1.png",
-      "assets/images/customer2.png",
-      "assets/images/customer3.png",
-      "assets/images/customer4.png",
-      "assets/images/customer5.png",
-      "assets/images/customer6.png",
-      "assets/images/customer7.png",
-      "assets/images/customer8.png",
-    ];
+  final images = [
+    "assets/images/customer1.png",
+    "assets/images/customer2.png",
+    "assets/images/customer3.png",
+    "assets/images/customer4.png",
+    "assets/images/customer5.png",
+    "assets/images/customer6.png",
+    "assets/images/customer7.png",
+    "assets/images/customer8.png",
+  ];
 
-    final names = [
-      "Bar.B.Q",
-      "Daisy Developers",
-      "Dayim Marketing",
-      "Ussion Host",
-      "Safari",
-      "Global Fotos",
-      "The Realtors",
-      "Khan"
-    ];
+  final names = [
+    "Bar.B.Q",
+    "Daisy Developers",
+    "Dayim Marketing",
+    "Ussion Host",
+    "Safari",
+    "Global Fotos",
+    "The Realtors",
+    "Khan"
+  ];
   @override
   Widget build(BuildContext context) {
     return CommonScafold(
@@ -1196,17 +1196,12 @@ class HomeScreen extends StatelessWidget {
                       // color: Colors.amber,
                       child: Column(
                         children: [
-                          SizedBox(height: Get.height / 20),
-                          Text(
-                            "Our portfolio silhouettes our triumph in our niche. Take a look at our gratified clients for motivation or a round of applause.",
-                            style: TextStyle(
-                                fontSize: 26,
-                                color: Colors.black,
-                                fontWeight: FontWeight.w500,
-                                fontFamily: "poppins"),
-                            textAlign: TextAlign.center,
-                          ),
-                          SizedBox(height: Get.height * 0.02),
+                          Text('Our Portfolio',
+                              style: TextStyle(
+                                fontSize: 35,
+                                fontFamily: 'Popins',
+                                fontWeight: FontWeight.bold,
+                              )).paddingSymmetric(vertical: 40),
                           !Responsive.isDesktopContext(context)
                               ? Column(
                                   children: [
